@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keen-eye"
+version = "1.0.0"
+description = "Privacy-first AI-powered OSINT image intelligence CLI"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Devansh" },
+  { name = "Soham M" }
+]
+dependencies = [
+  "Pillow>=10.4,<12",
+  "rich>=13.7,<15",
+  "google-genai>=1.0,<2"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+keeneye = "keeneye.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["keeneye*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
