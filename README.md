@@ -112,6 +112,42 @@ The `config` command shows only a masked suffix of the key.
 
 ## Usage
 
+### Guided interactive mode
+
+Run KEEN EYE without a command to open the professional numbered terminal
+interface:
+
+```bash
+keeneye
+```
+
+The menu accepts:
+
+```text
+[1] Analyze an image
+[2] Run offline demo
+[3] Configuration
+[4] System doctor
+[5] About KEEN EYE
+[00] Exit
+```
+
+Inside image analysis, choose:
+
+```text
+[1] EXIF data only
+[2] Geo location
+[3] EXIF + geo
+[4] Full AI intelligence
+[00] Back
+```
+
+The guided mode checks the image locally first, supports paths with spaces,
+asks for privacy approval before Gemini analysis, and offers JSON or HTML
+export after the report. EXIF, geo, and EXIF+geo modes work locally without
+an API key. Full AI intelligence uses the Gemini key configured on your
+machine.
+
 Show the first-run banner and analyze an image:
 
 ```bash
@@ -155,6 +191,7 @@ real intelligence.
 | Command | Purpose |
 | --- | --- |
 | `keeneye setup` | Securely save and validate a Gemini API key |
+| `keeneye` | Open the numbered interactive menu |
 | `keeneye image PATH` | Analyze a user-provided image |
 | `keeneye analyze PATH` | Alias for `image` |
 | `keeneye config` | Show safe configuration status |
