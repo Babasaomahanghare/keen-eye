@@ -180,7 +180,10 @@ def command_image(args) -> int:
 def main(argv: list[str] | None = None) -> None:
     args = parser().parse_args(argv)
     try:
-        if args.command in (None, "help"):
+        if args.command is None:
+            from .wizard import launch_wizard
+            code = launch_wizard()
+        elif args.command == "help":
             parser().print_help()
             code = 0
         elif args.command == "version":
